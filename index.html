@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1920, height=1080" />
+<title>Muse Ember - $1 Challenge Demo</title>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>
+:root{
+  --ground:#0B0F14;
+  --ground2:#0E141C;
+  --ink:#F2F3F5;
+  --muted:#9AA4B2;
+  --accent:#FF6B35;
+  --accent2:#FFB347;
+  --line:rgba(255,255,255,.14);
+  --font: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --mono: "SF Mono", "JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:var(--ground)}
+#root{position:relative;width:100%;height:100%;overflow:hidden;font-family:var(--font);color:var(--ink)}
+.clip{position:absolute;inset:0;overflow:hidden}
+.bg{position:absolute;inset:0;background:radial-gradient(ellipse 900px 600px at 70% 30%, rgba(255,107,53,.16), transparent 65%), radial-gradient(ellipse 700px 500px at 20% 80%, rgba(255,107,53,.08), transparent 60%), var(--ground)}
+.ghost{position:absolute;right:20px;top:40px;font-size:420px;font-weight:900;letter-spacing:-.04em;line-height:1.05;color:rgba(255,255,255,.38);white-space:nowrap;pointer-events:none}
+.grid-lines{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);background-size:120px 120px;opacity:.6}
+.kicker{font-family:var(--mono);font-size:22px;letter-spacing:.34em;text-transform:uppercase;color:var(--accent);font-weight:700}
+.eyebrow{font-family:var(--mono);font-size:20px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.big{font-size:132px;line-height:.92;font-weight:900;letter-spacing:-.035em}
+.mid{font-size:72px;line-height:1.02;font-weight:900;letter-spacing:-.03em}
+.small{font-size:34px;line-height:1.25;font-weight:500;color:#D7DCE3}
+.meta{font-family:var(--mono);font-size:20px;color:var(--muted);letter-spacing:.08em}
+.accent{color:var(--accent)}
+.pill{display:inline-flex;align-items:center;gap:12px;border:1.5px solid rgba(255,107,53,.5);border-radius:999px;padding:12px 22px;font-family:var(--mono);font-size:20px;color:var(--ink);background:rgba(255,107,53,.08)}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.hairline{width:120px;height:4px;background:var(--accent);border-radius:2px}
+.bar-track{width:780px;height:26px;background:rgba(255,255,255,.08);border-radius:999px;overflow:hidden;position:relative}
+.bar-fill{height:100%;border-radius:999px;background:var(--accent)}
+.bar-fill.dim{background:rgba(255,255,255,.35)}
+.card{background:rgba(255,255,255,.045);border:1.5px solid var(--line);border-radius:20px;padding:34px 38px}
+.statnum{font-size:108px;font-weight:900;letter-spacing:-.04em;line-height:1}
+.statlabel{font-family:var(--mono);font-size:20px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.foot{position:absolute;left:80px;right:80px;bottom:44px;display:flex;justify-content:space-between;align-items:center}
+.scene-tag{font-family:var(--mono);font-size:18px;letter-spacing:.28em;color:rgba(255,255,255,.45);text-transform:uppercase}
+.progress{width:320px;height:4px;background:rgba(255,255,255,.12);border-radius:2px;overflow:hidden}
+.progress-fill{height:100%;background:var(--accent);width:0%}
+.center-stack{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 140px;gap:28px}
+.left-stack{position:absolute;left:96px;top:0;bottom:0;width:1080px;display:flex;flex-direction:column;justify-content:center;gap:30px}
+.row{display:flex;gap:18px;align-items:center}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="60" data-width="1920" data-height="1080">
+<audio id="vo" data-start="0" data-duration="60" src="assets/vo.mp3">
+
+  <!-- S1 HOOK 0-10 -->
+  <section id="s1" class="clip" data-start="0" data-duration="10">
+    <div class="bg"></div><div class="grid-lines" id="s1grid"></div><div data-layout-ignore class="ghost" id="s1ghost">EMBER</div>
+    <div class="center-stack">
+      <div class="eyebrow" id="s1eye">OpenRouter × Meta · Build Day · Nov 9 2026</div>
+      <div class="big" id="s1line1">One dollar of</div>
+      <div class="big accent" id="s1line2">Muse Ember.</div>
+      <div class="small" id="s1sub">What can you make possible?</div>
+      <div class="pill" id="s1pill"><span class="dot"></span> meta/muse-ember via OpenRouter · $0.10 / $0.50 per 1M</div>
+    </div>
+    <div class="foot"><div data-layout-ignore class="scene-tag">01 — Hook</div><div class="progress"><div class="progress-fill" id="p1"></div></div></div>
+  </section>
+
+  <!-- S2 CLAIM 10-20 -->
+  <section id="s2" class="clip" data-start="10" data-duration="10">
+    <div class="bg"></div><div class="grid-lines" id="s2grid"></div><div data-layout-ignore class="ghost" id="s2ghost">SMALL</div>
+    <div class="left-stack">
+      <div class="kicker" id="s2kicker">Meta Superintelligence Labs</div>
+      <div class="big" id="s2big">Smallest.<br /><span class="accent">Most efficient.</span></div>
+      <div class="small" id="s2body">Built for complex reasoning and the work agents repeat all day. Terminals, browsers, code, automation.</div>
+      <div class="row" id="s2chips">
+        <div class="pill"><span class="dot"></span> 1M context</div>
+        <div class="pill"><span class="dot"></span> 512K output</div>
+        <div class="pill"><span class="dot"></span> Tool calling</div>
+        <div class="pill"><span class="dot"></span> Vision</div>
+      </div>
+    </div>
+    <div style="position:absolute;right:110px;top:0;bottom:0;width:520px;display:flex;flex-direction:column;justify-content:center;gap:22px">
+      <div class="card"><div class="statnum accent">$0.10</div><div class="statlabel">per 1M input tokens</div></div>
+      <div class="card"><div class="statnum">$0.50</div><div class="statlabel">per 1M output tokens</div></div>
+      <div class="card"><div class="statnum accent" id="s2num" style="font-size:64px">1,048,576</div><div class="statlabel">token context window</div></div>
+    </div>
+    <div class="foot"><div data-layout-ignore class="scene-tag">02 — The model</div><div class="progress"><div class="progress-fill" id="p2"></div></div></div>
+  </section>
+
+  <!-- S3 STATS 20-35 -->
+  <section id="s3" class="clip" data-start="20" data-duration="15">
+    <div class="bg"></div><div class="grid-lines" id="s3grid"></div><div data-layout-ignore class="ghost" id="s3ghost">36</div>
+    <div class="left-stack" style="width:820px">
+      <div class="kicker">Intelligence Index · max reasoning</div>
+      <div style="display:flex;align-items:baseline;gap:24px">
+        <div class="statnum accent" id="s3count" style="font-size:220px">0</div>
+        <div>
+          <div class="mid">matches Haiku 5.5</div>
+          <div class="meta" style="margin-top:10px">Ember 35.8 vs Haiku 5.5 36.2 unrounded</div>
+        </div>
+      </div>
+      <div class="small">At about one third the cost per task. ~$0.14 per task.</div>
+      <div style="margin-top:10px">
+        <div class="row" style="justify-content:space-between;width:780px"><span class="meta">MUSE EMBER</span><span class="meta" style="color:var(--accent)">36</span></div>
+        <div class="bar-track"><div class="bar-fill" id="bar-ember"></div></div>
+        <div class="row" style="justify-content:space-between;width:780px;margin-top:18px"><span class="meta">CLAUDE HAIKU 5.5</span><span class="meta">36</span></div>
+        <div class="bar-track"><div class="bar-fill dim" id="bar-haiku"></div></div>
+      </div>
+    </div>
+    <div style="position:absolute;right:110px;top:0;bottom:0;width:560px;display:flex;flex-direction:column;justify-content:center;gap:20px">
+      <div class="card"><div class="statnum accent" id="s3cost">0</div><div class="statlabel">dollars per task · 1/3 Haiku cost</div></div>
+      <div class="card"><div class="statnum" style="font-size:72px">64%</div><div class="statlabel">trivia declined · knowledge is the weak spot</div></div>
+      <div class="meta">Artificial Analysis Intelligence Index · max reasoning</div>
+    </div>
+    <div class="foot"><div data-layout-ignore class="scene-tag">03 — Headline stats</div><div class="progress"><div class="progress-fill" id="p3"></div></div></div>
+  </section>
+
+  <!-- S4 BENCHMARKS 35-48 -->
+  <section id="s4" class="clip" data-start="35" data-duration="13">
+    <div class="bg"></div><div class="grid-lines" id="s4grid"></div>
+    <div style="position:absolute;left:96px;top:90px;right:96px">
+      <div class="kicker">Benchmarks · max reasoning</div>
+      <div class="mid" style="margin-top:14px">Ember vs Haiku 5.5 vs GPT-6 Luna</div>
+    </div>
+    <div style="position:absolute;left:96px;top:280px;right:96px;display:grid;grid-template-columns:1fr 1fr;gap:22px">
+      <div class="card bench"><div class="row" style="justify-content:space-between"><span class="statlabel">AutomationBench-AA</span><span class="pill" style="padding:8px 16px">EMBER WINS</span></div><div class="statnum accent">37.8</div><div class="meta">Haiku 13.9 · Luna 20.2</div><div class="bar-track" style="width:100%;margin-top:16px"><div class="bar-fill" id="b1"></div></div></div>
+      <div class="card bench"><div class="row" style="justify-content:space-between"><span class="statlabel">Terminal-Bench 4.0</span><span class="pill" style="padding:8px 16px">EMBER WINS</span></div><div class="statnum">40.9</div><div class="meta">Haiku 39.2 · Luna 16.4</div><div class="bar-track" style="width:100%;margin-top:16px"><div class="bar-fill" id="b2"></div></div></div>
+      <div class="card bench"><div class="row" style="justify-content:space-between"><span class="statlabel">OSWorld 2.1</span><span class="pill" style="padding:8px 16px">EMBER WINS</span></div><div class="statnum">69.5</div><div class="meta">Haiku 68.9 · Luna 50.5</div><div class="bar-track" style="width:100%;margin-top:16px"><div class="bar-fill" id="b3"></div></div></div>
+      <div class="card bench"><div class="row" style="justify-content:space-between"><span class="statlabel">Coding Agent Index</span><span class="pill" style="padding:8px 16px">EMBER WINS</span></div><div class="statnum accent">46</div><div class="meta">Haiku 37 · Luna 31</div><div class="bar-track" style="width:100%;margin-top:16px"><div class="bar-fill" id="b4"></div></div></div>
+    </div>
+    <div class="meta" style="position:absolute;left:96px;bottom:120px">FrontierCode 2.0-AA: Ember 27.2 trails Haiku 34.9 · Luna 25.2 — the one loss.</div>
+    <div class="foot"><div data-layout-ignore class="scene-tag">04 — Benchmarks</div><div class="progress"><div class="progress-fill" id="p4"></div></div></div>
+  </section>
+
+  <!-- S5 SHOWCASE 48-55 -->
+  <section id="s5" class="clip" data-start="48" data-duration="7">
+    <div class="bg"></div><div class="grid-lines" id="s5grid"></div><div data-layout-ignore class="ghost" id="s5ghost">AGENT</div>
+    <div class="center-stack">
+      <div class="eyebrow">The challenge · $20 credits · live demo 8:30 PM</div>
+      <div class="big" id="s5big">The work agents<br /><span class="accent">repeat all day.</span></div>
+      <div class="row" id="s5tags" style="justify-content:center">
+        <div class="pill">Terminal</div><div class="pill">Browser</div><div class="pill">Code</div><div class="pill">Automation</div><div class="pill">Rescuers</div>
+      </div>
+      <div class="small" id="s5line">This film was directed, built, rendered and shipped in 15 minutes.</div>
+    </div>
+    <div class="foot"><div data-layout-ignore class="scene-tag">05 — The build</div><div class="progress"><div class="progress-fill" id="p5"></div></div></div>
+  </section>
+
+  <!-- S6 CTA 55-60 -->
+  <section id="s6" class="clip" data-start="55" data-duration="5">
+    <div class="bg"></div><div class="grid-lines" id="s6grid"></div>
+    <div class="center-stack">
+      <div class="kicker">Meta Muse Ember · OpenRouter</div>
+      <div class="big" style="font-size:110px" id="s6big">meta/<span class="accent">muse-ember</span></div>
+      <div class="small" id="s6sub">Smallest. Most efficient. Now on OpenRouter.</div>
+      <div class="pill" id="s6pill"><span class="dot"></span> Artificial Analysis Index 36 · 1M context · $0.10 / $0.50</div>
+      <div class="meta" id="s6foot">OpenRouter × Meta Build Day · Karl Villanueva</div>
+    </div>
+    <div class="foot"><div data-layout-ignore class="scene-tag">06 — Build something</div><div class="progress"><div class="progress-fill" id="p6"></div></div></div>
+  </section>
+
+</div>
+
+<script>
+const tl = gsap.timeline({ paused: true });
+
+// Ambient: ghost drift + grid breathe (finite, seek-safe via fromTo)
+tl.fromTo("#s1ghost", { x: 30 }, { x: -30, duration: 10, ease: "sine.inOut" }, 0);
+tl.fromTo("#s2ghost", { x: 30 }, { x: -30, duration: 10, ease: "sine.inOut" }, 10);
+tl.fromTo("#s3ghost", { x: 30 }, { x: -30, duration: 15, ease: "sine.inOut" }, 20);
+tl.fromTo("#s5ghost", { x: 30 }, { x: -30, duration: 7, ease: "sine.inOut" }, 48);
+tl.fromTo("#s1grid", { opacity: .3 }, { opacity: .7, duration: 5, ease: "sine.inOut", yoyo: true, repeat: 1 }, 0);
+tl.fromTo("#s3grid", { opacity: .3 }, { opacity: .7, duration: 7.5, ease: "sine.inOut", yoyo: true, repeat: 1 }, 20);
+
+// Progress bars
+tl.fromTo("#p1", { width: "0%" }, { width: "100%", duration: 10, ease: "none" }, 0);
+tl.fromTo("#p2", { width: "0%" }, { width: "100%", duration: 10, ease: "none" }, 10);
+tl.fromTo("#p3", { width: "0%" }, { width: "100%", duration: 15, ease: "none" }, 20);
+tl.fromTo("#p4", { width: "0%" }, { width: "100%", duration: 13, ease: "none" }, 35);
+tl.fromTo("#p5", { width: "0%" }, { width: "100%", duration: 7, ease: "none" }, 48);
+tl.fromTo("#p6", { width: "0%" }, { width: "100%", duration: 5, ease: "none" }, 55);
+
+// S1 entrance - kinetic type burst
+tl.fromTo("#s1eye", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 0);
+tl.fromTo("#s1line1", { y: 90, opacity: 0, scale: .96 }, { y: 0, opacity: 1, scale: 1, duration: 0.6, ease: "power4.out" }, 0);
+tl.fromTo("#s1line2", { y: 90, opacity: 0, scale: .96 }, { y: 0, opacity: 1, scale: 1, duration: 0.6, ease: "power4.out" }, 0.9);
+tl.fromTo("#s1sub", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 1.6);
+tl.fromTo("#s1pill", { y: 30, opacity: 0, scale: .95 }, { y: 0, opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.4)" }, 2.1);
+tl.to("#s1line1", { opacity: .25, duration: 1.2, ease: "sine.out" }, 8.8);
+tl.to("#s1line2", { opacity: .25, duration: 1.2, ease: "sine.out" }, 8.8);
+
+// S2 entrance
+tl.fromTo("#s2kicker", { x: -50, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 10.1);
+tl.fromTo("#s2big", { y: 70, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power4.out" }, 10.3);
+tl.fromTo("#s2body", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 10.9);
+tl.fromTo("#s2chips", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 11.4);
+tl.fromTo("#s2 .card", { x: 60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.out", stagger: 0.12 }, 11.7);
+tl.fromTo("#s2num", { opacity: .2 }, { opacity: 1, duration: 1.5, ease: "sine.out" }, 12.0);
+
+// S3 count-up + bars
+const cnt = { v: 0 };
+tl.to(cnt, { v: 36, duration: 2.2, ease: "power2.out", onUpdate: () => {
+  document.getElementById("s3count").textContent = Math.round(cnt.v);
+} }, 20.4);
+const cost = { v: 0 };
+tl.to(cost, { v: 0.14, duration: 2.0, ease: "power2.out", onUpdate: () => {
+  document.getElementById("s3cost").textContent = "$" + cost.v.toFixed(2);
+} }, 21.0);
+tl.fromTo("#bar-ember", { scaleX: 0 }, { scaleX: 1, duration: 1.4, ease: "power3.out", transformOrigin: "left center" }, 22.6);
+tl.fromTo("#bar-haiku", { scaleX: 0 }, { scaleX: 1, duration: 1.4, ease: "power3.out", transformOrigin: "left center" }, 22.9);
+tl.fromTo("#s3 .card", { x: 60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power3.out", stagger: 0.12 }, 20.6);
+
+// S4 bench bars
+tl.fromTo(".bench", { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.out", stagger: 0.09 }, 35.2);
+tl.fromTo("#b1", { scaleX: 0 }, { scaleX: 0.55, duration: 1.2, ease: "power3.out", transformOrigin: "left center" }, 35.9);
+tl.fromTo("#b2", { scaleX: 0 }, { scaleX: 0.62, duration: 1.2, ease: "power3.out", transformOrigin: "left center" }, 36.0);
+tl.fromTo("#b3", { scaleX: 0 }, { scaleX: 0.85, duration: 1.2, ease: "power3.out", transformOrigin: "left center" }, 36.1);
+tl.fromTo("#b4", { scaleX: 0 }, { scaleX: 0.70, duration: 1.2, ease: "power3.out", transformOrigin: "left center" }, 36.2);
+tl.fromTo("#s4 .meta", { opacity: 0 }, { opacity: 1, duration: 0.4, stagger: 0.05 }, 36.5);
+
+// S5
+tl.fromTo("#s5 .eyebrow", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 48.1);
+tl.fromTo("#s5big", { y: 80, opacity: 0, scale: .97 }, { y: 0, opacity: 1, scale: 1, duration: 0.6, ease: "power4.out" }, 48.4);
+tl.fromTo("#s5tags .pill", { y: 36, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, ease: "back.out(1.6)", stagger: 0.07 }, 49.1);
+tl.fromTo("#s5line", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 49.8);
+
+// S6
+tl.fromTo("#s6 .kicker", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 55.1);
+tl.fromTo("#s6big", { y: 70, opacity: 0, scale: .97 }, { y: 0, opacity: 1, scale: 1, duration: 0.6, ease: "power4.out" }, 55.3);
+tl.fromTo("#s6sub", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 55.9);
+tl.fromTo("#s6pill", { y: 30, opacity: 0, scale: .95 }, { y: 0, opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.4)" }, 56.4);
+tl.fromTo("#s6foot", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "sine.out" }, 57.1);
+
+window.__timelines["main"] = tl;
+tl.seek(0);
+</script>
+</body>
+</html>

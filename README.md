@@ -2,23 +2,22 @@
 
 A motion graphics demo video made with Muse Ember (via OpenRouter) for the Build Day: OpenRouter × Meta hackathon.
 
+- **Demo video**: `renders/muse-ember-demo.mp4` (60s, 1920×1080, H.264 with audio)
 - **Brief**: https://app.notion.com/p/openrouter/Build-Day-OpenRouter-x-Meta-4102fd57c4dc808da9c8eaa351d460ad
 
 ## What it is
 
-A HyperFrames composition — HTML, CSS and seekable GSAP animations that render to MP4.
+A HyperFrames composition, HTML, CSS and seekable GSAP animations that render to MP4. Voiceover in a Burt Reynolds-style voice via ElevenLabs.
 
-- Entry: `muse-ember-demo/index.html` (1920×1080, 10s)
+- Entry: `index.html` (1920×1080, 60s, 6 scenes)
 - Stack: HyperFrames 0.9.28, GSAP 3.15.0
+- Voiceover: ElevenLabs text-to-speech, Burt Reynolds voice (`assets/vo.mp3`)
 
 ## Run
 
 ```bash
-cd muse-ember-demo
-npm run dev      # preview in browser
-npm run check    # lint + runtime + layout checks
-npm run render   # render to MP4
-npm run publish  # shareable link
+bunx hyperframes check
+bunx hyperframes render -o renders/muse-ember-demo.mp4
 ```
 
 ## Model
