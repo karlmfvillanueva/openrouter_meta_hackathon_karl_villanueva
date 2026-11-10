@@ -10,7 +10,9 @@ A motion graphics demo video made with Muse Ember (via OpenRouter) for the Build
 
 ## What it is
 
-A HyperFrames composition, HTML, CSS and seekable GSAP animations that render to MP4. Voiceover in a Burt Reynolds-style voice via ElevenLabs.
+A HyperFrames composition, HTML, CSS and seekable GSAP animations that render to MP4.
+
+Stack: HyperFrames (rendering) + GSAP (animation) + ElevenLabs (voiceover) + Muse Ember via OpenRouter (model).
 
 - Entry: `index.html` (1920×1080, 60s, 6 scenes)
 - Stack: HyperFrames 0.9.28, GSAP 3.15.0
