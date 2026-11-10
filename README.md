@@ -2,6 +2,8 @@
 
 [![Watch the demo](https://img.youtube.com/vi/X6HGVitvS8I/hqdefault.jpg)](https://youtu.be/X6HGVitvS8I)
 
+[![Muse Ember demo](assets/youtube-still.jpg)](https://youtu.be/X6HGVitvS8I)
+
 A motion graphics demo video made with Muse Ember (via OpenRouter) for the Build Day: OpenRouter × Meta hackathon.
 
 - **Demo video**: https://youtu.be/X6HGVitvS8I
@@ -10,13 +12,16 @@ A motion graphics demo video made with Muse Ember (via OpenRouter) for the Build
 
 ## What it is
 
-A HyperFrames composition, HTML, CSS and seekable GSAP animations that render to MP4.
+A HyperFrames composition from HeyGen, HTML, CSS and seekable GSAP animations that render to MP4.
 
-Stack: HyperFrames (rendering) + GSAP (animation) + ElevenLabs (voiceover) + Muse Ember via OpenRouter (model).
+Stack: HyperFrames from HeyGen (rendering) + GSAP (animation) + ElevenLabs (voiceover) + Muse Ember via OpenRouter (model).
+
+Built with HyperFrames from HeyGen and ElevenLabs for voice. The video was directed, built, rendered and shipped by Muse Ember via OpenRouter.
 
 - Entry: `index.html` (1920×1080, 60s, 6 scenes)
-- Stack: HyperFrames 0.9.28, GSAP 3.15.0
+- Stack: HyperFrames from HeyGen 0.9.28, GSAP 3.15.0
 - Voiceover: ElevenLabs text-to-speech, Burt Reynolds voice (`assets/vo.mp3`)
+- Watch: https://youtu.be/X6HGVitvS8I
 
 ## Run
 
