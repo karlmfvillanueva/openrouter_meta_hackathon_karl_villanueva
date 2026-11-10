@@ -1,8 +1,11 @@
 # Muse Ember demo
 
+[![Watch the demo](https://img.youtube.com/vi/X6HGVitvS8I/hqdefault.jpg)](https://youtu.be/X6HGVitvS8I)
+
 A motion graphics demo video made with Muse Ember (via OpenRouter) for the Build Day: OpenRouter × Meta hackathon.
 
-- **Demo video**: `renders/muse-ember-demo.mp4` (60s, 1920×1080, H.264 with audio)
+- **Demo video**: https://youtu.be/X6HGVitvS8I
+- **Local file**: `renders/muse-ember-demo.mp4` (60s, 1920×1080, H.264 with audio)
 - **Brief**: https://app.notion.com/p/openrouter/Build-Day-OpenRouter-x-Meta-4102fd57c4dc808da9c8eaa351d460ad
 
 ## What it is
